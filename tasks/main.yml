@@ -4,8 +4,3 @@
   yum:
     name: httpd
     state: latest
-    
-- name: Enable service httpd, and not touch the running state
-  service:
-    name: httpd
-    enabled: yes
