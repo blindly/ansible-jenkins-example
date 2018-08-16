@@ -9,16 +9,7 @@ if [[ $rc != 0 ]]; then
     fail_provision=1
 fi
 
-echo "=> Verify Environment"
-fail_spec=0
-rake spec
-rc=$?
-if [[ $rc != 0 ]]; then
-    echo "=> TESTING FAIL"
-    fail_spec=1
-fi
-
-if [[ $fail_ansible == 1 || $fail_provision == 1 || $fail_spec == 1 ]]; then
+if [[ $fail_provision == 1 ]]; then
     echo "=> FAIL FAIL FAIL"
     exit 1
 else
